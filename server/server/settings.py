@@ -1,14 +1,6 @@
-
-"""
-Django Settings Configuration for BotTube API
-
-Add these to your server/settings.py file
-"""
-
 import os
 from dotenv import load_dotenv
 
-# Load environment variables
 load_dotenv()
 
 SECRET_KEY = 'django-insecure-w4&xf^#^2)20x_smnvcc%xrkmjw@67@fuzj7(%o+hu^$%m3^3+'
@@ -25,18 +17,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
-    # Third party apps
     'rest_framework',
     'corsheaders',
     
-    # Your apps
     'api',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',  # CORS should be before CommonMiddleware
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -60,7 +50,6 @@ TEMPLATES = [
     },
 ]
 
-# CORS Settings
 CORS_ALLOWED_ORIGINS = [
 
     'http://localhost:3000', 'http://localhost:5173'
@@ -68,7 +57,6 @@ CORS_ALLOWED_ORIGINS = [
 
 CORS_ALLOW_CREDENTIALS = True
 
-# REST Framework Settings
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [
         'rest_framework.renderers.JSONRenderer',

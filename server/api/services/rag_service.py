@@ -7,7 +7,6 @@ import numpy as np
 
 genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
 
-
 class RAGService:
 
     def __init__(self):
